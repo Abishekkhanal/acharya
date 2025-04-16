@@ -1,3 +1,7 @@
+window.addEventListener('load', function () {
+  document.getElementById('preloader').style.display = 'none';
+});
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(productId, productName, productPrice) {
