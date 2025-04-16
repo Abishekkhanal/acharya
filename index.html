@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acharya Furniture</title>
   <style>
+  #preloader {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#preloader img {
+  width: 150px;
+  height: auto;
+}
+
+
+
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -29,22 +49,55 @@
       font-weight: bold;
     }
     .banner {
-      position: relative;
-      width: 100vw;
-      height: 400px;
-      overflow: hidden;
-    }
-    .banner img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .banner img.active {
-      opacity: 1;
-    }
+    position: relative;
+    width: 100vw;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  .banner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .banner img.active {
+    opacity: 1;
+  }
+
+  .banner::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .banner-text h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
     .categories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -61,9 +114,22 @@
       height: 150px;
       object-fit: cover;
     }
+    a {
+       text-decoration: none;
+      color: red
+     
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+  <div id="preloader">
+    <img src="assets/images/loader.gif" alt="Loading..." />
+  </div>
+  
+
+  
+  
   <header>
     <h1>Acharya Furniture</h1>
     <nav>
@@ -75,11 +141,13 @@
   </header>
 
   <section class="banner">
-    <img src="assets/images/Banner/banne1.jpg" alt="Living Room Furniture" class="active">
-    <img src="assets/images/Banner/banne2.jpg" alt="Sofa Set">
-    <img src="assets/images/Banner/banne3.jpg" alt="Chesterfield Sofa">
-    <img src="assets/images/Banner/banne4.jpg" alt="Traditional Sofa">
-    <img src="assets/images/Banner/banne5.jpg" alt="Traditional Sofa">
+    <img src="https://tse1.mm.bing.net/th?id=OIP.-7oN4CME6VUUIsqZvcmgagHaHa&pid=Api" alt="Living Room Furniture" class="active">
+  <img src="https://tse4.mm.bing.net/th?id=OIP.mAUJlfY24w-JjV_rQB0zbAHaFu&pid=Api" alt="Sofa Set">
+  <img src="https://tse1.mm.bing.net/th?id=OIP.KVM9xoBk_8vrs27u60uG2QHaHa&pid=Api" alt="Chesterfield Sofa">
+  <img src="https://tse2.mm.bing.net/th?id=OIP.ajRJhWSQygdDZ4lYhVvViAHaHa&pid=Api" alt="Traditional Sofa">
+  <div class="banner-text">
+    <h1>Elegant & Affordable Furniture</h1>
+    <p>Transform Your Home with Acharya Furniture</p>
   </section>
 
   <section class="categories">
@@ -102,7 +170,7 @@
   </section>
 
   <footer>
-    <p align="center">&copy; 2025 Acharya Furniture | Contact: +123456789 | Address: Salugara 2 Mile Check Post</p>
+    <p align="center">&copy; 2025 Acharya Furniture | Contact: +123456789 | Address: Salugara 2 Mile Check Post | Made with ❤ by <a href="http://abishek.rf.gd/?i=1"> Abishek Khanal</p>
   </footer>
 
   <script>
@@ -117,5 +185,6 @@
 
     setInterval(showNextImage, 3000);
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
