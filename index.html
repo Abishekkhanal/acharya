@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acharya Furniture</title>
+  <link rel="stylesheet" href="css/style.css">
   <style>
   #preloader {
   background: #fff;
@@ -22,6 +23,53 @@
   height: auto;
 }
 
+header {
+  background: url('assets/images/navbar.png') no-repeat center center/cover;
+  color: #fff;
+  padding: 1.5em 1em; /* Reduced padding for a more compact header */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for a subtle effect */
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-size: 1.5em; /* Smaller font size */
+  margin-bottom: 0.5em;
+  text-transform: uppercase; /* Keeping the bold and professional look */
+}
+
+nav {
+  text-align: center;
+  border-top: 2px solid #fff; /* Adds a top horizontal line */
+  border-bottom: 2px solid #fff; /* Adds a bottom horizontal line */
+  padding: 1em 0; /* Adds padding between the lines and the links */
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px; /* Space between links */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12; /* Gold color on hover */
+  transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+nav a:active {
+  color: #e67e22; /* Darker shade on click */
+}
+
+nav a:first-child {
+  margin-left: 0; /* No margin on the left for the first link */
+}
+
+nav a:last-child {
+  margin-right: 0; /* No margin on the right for the last link */
+}
 
 
 
@@ -33,21 +81,9 @@
     h2 {
       color: #007BFF;
     }
-    header {
-      background: url('assets/images/navbar.png') no-repeat center center/cover;
-      color: #fff;
-      padding: 2em 1em;
-      text-align: center;
-    }
-    nav {
-      margin-top: 1em;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    
+
+
     .banner {
     position: relative;
     width: 100vw;
@@ -120,12 +156,19 @@
      
       font-weight: bold;
     }
+    @media (max-width: 768px) {
+  .banner-text {
+    font-size: 18px;
+  }
+}
+
   </style>
 </head>
 <body>
   <div id="preloader">
-    <img src="loader.gif" alt="Loading..." />
+    <img src="assets/images/loader.gif" alt="Loading..." />
   </div>
+  
   
 
   
@@ -138,7 +181,8 @@
       <a href="cart.html">Cart</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+</header>
+
 
   <section class="banner">
     <img src="https://tse1.mm.bing.net/th?id=OIP.-7oN4CME6VUUIsqZvcmgagHaHa&pid=Api" alt="Living Room Furniture" class="active">
@@ -149,6 +193,42 @@
     <h1>Elegant & Affordable Furniture</h1>
     <p>Transform Your Home with Acharya Furniture</p>
   </section>
+  <button id="backToTop">↑ Back to Top</button>
+  <section class="why-choose-us">
+    <h2 align="center">Why Choose Acharya Furniture?</h2>
+    <div class="features">
+      <div class="feature-box">
+        <img src="assets/icons/2037464.png" alt="Home Delivery">
+        <h3>Fast & Free Home Delivery</h3>
+        <p>Get your furniture delivered right to your doorstep quickly and safely – absolutely free!</p>
+      </div>
+  
+      <div class="feature-box">
+        <img src="assets/icons/5619346.png" alt="Quality Assured">
+        <h3>Premium Quality Products</h3>
+        <p>We use only the best materials and skilled craftsmanship for every product we make.</p>
+      </div>
+  
+      <div class="feature-box">
+        <img src="assets/icons/8743989.png" alt="Support">
+        <h3>24/7 Customer Support</h3>
+        <p>We’re always here to assist you — before, during, and after your purchase.</p>
+      </div>
+  
+      <div class="feature-box">
+        <img src="assets/icons/487551.png" alt="Customization">
+        <h3>Customization Available</h3>
+        <p>Want your furniture made your way? We customize according to your needs and style.</p>
+      </div>
+  
+      <div class="feature-box">
+        <img src="assets/icons/4371076.png" alt="Trusted Service">
+        <h3>Trusted by Hundreds</h3>
+        <p>Our happy customers across Salugara and beyond trust us for top-notch furniture and service.</p>
+      </div>
+    </div>
+  </section>
+  
 
   <section class="categories">
     <div class="category">
@@ -169,11 +249,52 @@
     </div>
   </section>
 
-  <footer>
-    <p align="center">&copy; 2025 Acharya Furniture | Contact: +123456789 | Address: Salugara 2 Mile Check Post | Made with ❤ by <a href="http://abishek.rf.gd/?i=1"> Abishek Khanal</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 <strong>Acharya Furniture</strong></p>
+      <p>📞 Contact: <a href="tel:8145002490">8145002490</a></p>
+      <p>📍 Address: Salugara 2 Mile Check Post</p>
+      <p>Made with <span style="color: red;">❤</span> by 
+        <a href="http://abishek.rf.gd/?i=1" target="_blank">Abishek Khanal</a>
+      </p>
+    </div>
   </footer>
+  
 
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+
     const images = document.querySelectorAll('.banner img');
     let current = 0;
 

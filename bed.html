@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Furniture Products</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
     header {
@@ -13,15 +13,53 @@
       padding: 2em 1em;
       text-align: center;
     }
-    nav {
-      margin-top: 1em;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    header {
+  background: url('assets/images/navbar.png') no-repeat center center/cover;
+  color: #fff;
+  padding: 1.5em 1em; /* Reduced padding for a more compact header */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for a subtle effect */
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-size: 1.5em; /* Smaller font size */
+  margin-bottom: 0.5em;
+  text-transform: uppercase; /* Keeping the bold and professional look */
+}
+
+nav {
+  text-align: center;
+  border-top: 2px solid #fff; /* Adds a top horizontal line */
+  border-bottom: 2px solid #fff; /* Adds a bottom horizontal line */
+  padding: 1em 0; /* Adds padding between the lines and the links */
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px; /* Space between links */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12; /* Gold color on hover */
+  transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+nav a:active {
+  color: #e67e22; /* Darker shade on click */
+}
+
+nav a:first-child {
+  margin-left: 0; /* No margin on the left for the first link */
+}
+
+nav a:last-child {
+  margin-right: 0; /* No margin on the right for the last link */
+}
     .product-grid { display: flex; flex-wrap: wrap; gap: 2rem; padding: 2rem; justify-content: center; }
     .product-card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; width: 300px; }
     .product-card img { width: 100%; border-radius: 10px; }
@@ -44,232 +82,263 @@
   <br><center><h2>Our Furniture Products</h2></center> 
 
   <div class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="assets/images/Bed/1.jpg" alt="Item">
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong> </p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-sofa"></label><br>
-      <button onclick="addToCart('Item', 00, 'qty-sofa')">Add to Cart</button>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="assets/images/Bed/2.jpg" alt="Item">     
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong></p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-      <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="assets/images/Bed/3.jpg" alt="Item">     
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong></p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-      <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
-    </div>
-    <!-- Product 4 --> 
+ <!-- Product 1 -->
 <div class="product-card">
-  <img src="assets/images/Bed/4.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed1" src="assets/images/Bed/1.jpg" alt="Bed Model 1" />
+  <h2>Bed Model 1</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3500</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed1"></label><br>
+  <button onclick="addToCart('Bed Model 1', 3500, 'qty-bed1', 'img-bed1')">Add to Cart</button>
 </div>
 
-<!-- Product 5 --> 
+<!-- Product 2 -->
 <div class="product-card">
-  <img src="assets/images/Bed/5.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed2" src="assets/images/Bed/2.jpg" alt="Bed Model 2" />
+  <h2>Bed Model 2</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3600</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed2"></label><br>
+  <button onclick="addToCart('Bed Model 2', 3600, 'qty-bed2', 'img-bed2')">Add to Cart</button>
+</div>
+<button id="backToTop">↑ Back to Top</button>
+<!-- Product 3 -->
+<div class="product-card">
+  <img id="img-bed3" src="assets/images/Bed/3.jpg" alt="Bed Model 3" />
+  <h2>Bed Model 3</h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹3700</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed3"></label><br>
+  <button onclick="addToCart('Bed Model 3', 3700, 'qty-bed3', 'img-bed3')">Add to Cart</button>
 </div>
 
-<!-- Product 6 --> 
+<!-- Product 4 -->
 <div class="product-card">
-  <img src="assets/images/Bed/6.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed4" src="assets/images/Bed/4.jpg" alt="Bed Model 4" />
+  <h2>Bed Model 4</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3800</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed4"></label><br>
+  <button onclick="addToCart('Bed Model 4', 3800, 'qty-bed4', 'img-bed4')">Add to Cart</button>
 </div>
 
-<!-- Product 7 --> 
+<!-- Product 5 -->
 <div class="product-card">
-  <img src="assets/images/Bed/7.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed5" src="assets/images/Bed/5.jpg" alt="Bed Model 5" />
+  <h2>Bed Model 5</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3900</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed5"></label><br>
+  <button onclick="addToCart('Bed Model 5', 3900, 'qty-bed5', 'img-bed5')">Add to Cart</button>
 </div>
 
-<!-- Product 8 --> 
+<!-- Product 6 -->
 <div class="product-card">
-  <img src="assets/images/Bed/8.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed6" src="assets/images/Bed/6.jpg" alt="Bed Model 6" />
+  <h2>Bed Model 6</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4000</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed6"></label><br>
+  <button onclick="addToCart('Bed Model 6', 4000, 'qty-bed6', 'img-bed6')">Add to Cart</button>
 </div>
 
-<!-- Product 9 --> 
+<!-- Product 7 -->
 <div class="product-card">
-  <img src="assets/images/Bed/9.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed7" src="assets/images/Bed/7.jpg" alt="Bed Model 7" />
+  <h2>Bed Model 7</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4100</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed7"></label><br>
+  <button onclick="addToCart('Bed Model 7', 4100, 'qty-bed7', 'img-bed7')">Add to Cart</button>
 </div>
 
-<!-- Product 10 --> 
+<!-- Product 8 -->
 <div class="product-card">
-  <img src="assets/images/Bed/10.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed8" src="assets/images/Bed/8.jpg" alt="Bed Model 8" />
+  <h2>Bed Model 8</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4200</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed8"></label><br>
+  <button onclick="addToCart('Bed Model 8', 4200, 'qty-bed8', 'img-bed8')">Add to Cart</button>
 </div>
 
-<!-- Product 11 --> 
+<!-- Product 9 -->
 <div class="product-card">
-  <img src="assets/images/Bed/11.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed9" src="assets/images/Bed/9.jpg" alt="Bed Model 9" />
+  <h2>Bed Model 9</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4300</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed9"></label><br>
+  <button onclick="addToCart('Bed Model 9', 4300, 'qty-bed9', 'img-bed9')">Add to Cart</button>
 </div>
 
-<!-- Product 12 --> 
+<!-- Product 10 -->
 <div class="product-card">
-  <img src="assets/images/Bed/12.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed10" src="assets/images/Bed/10.jpg" alt="Bed Model 10" />
+  <h2>Bed Model 10</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4400</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed10"></label><br>
+  <button onclick="addToCart('Bed Model 10', 4400, 'qty-bed10', 'img-bed10')">Add to Cart</button>
 </div>
 
-<!-- Product 13 --> 
+<!-- Product 11 -->
 <div class="product-card">
-  <img src="assets/images/Bed/13.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed11" src="assets/images/Bed/11.jpg" alt="Bed Model 11" />
+  <h2>Bed Model 11</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4500</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed11"></label><br>
+  <button onclick="addToCart('Bed Model 11', 4500, 'qty-bed11', 'img-bed11')">Add to Cart</button>
 </div>
 
-<!-- Product 14 --> 
+<!-- Product 12 -->
 <div class="product-card">
-  <img src="assets/images/Bed/14.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed12" src="assets/images/Bed/12.jpg" alt="Bed Model 12" />
+  <h2>Bed Model 12</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4600</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed12"></label><br>
+  <button onclick="addToCart('Bed Model 12', 4600, 'qty-bed12', 'img-bed12')">Add to Cart</button>
 </div>
 
-<!-- Product 15 --> 
+<!-- Product 13 -->
 <div class="product-card">
-  <img src="assets/images/Bed/15.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed13" src="assets/images/Bed/13.jpg" alt="Bed Model 13" />
+  <h2>Bed Model 13</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4700</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed13"></label><br>
+  <button onclick="addToCart('Bed Model 13', 4700, 'qty-bed13', 'img-bed13')">Add to Cart</button>
 </div>
 
-<!-- Product 16 --> 
+<!-- Product 14 -->
 <div class="product-card">
-  <img src="assets/images/Bed/16.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed14" src="assets/images/Bed/14.jpg" alt="Bed Model 14" />
+  <h2>Bed Model 14</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4800</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed14"></label><br>
+  <button onclick="addToCart('Bed Model 14', 4800, 'qty-bed14', 'img-bed14')">Add to Cart</button>
 </div>
 
-<!-- Product 17 --> 
+<!-- Product 15 -->
 <div class="product-card">
-  <img src="assets/images/Bed/17.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed15" src="assets/images/Bed/15.jpg" alt="Bed Model 15" />
+  <h2>Bed Model 15</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4900</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed15"></label><br>
+  <button onclick="addToCart('Bed Model 15', 4900, 'qty-bed15', 'img-bed15')">Add to Cart</button>
 </div>
 
-<!-- Product 18 --> 
+<!-- Product 16 -->
 <div class="product-card">
-  <img src="assets/images/Bed/18.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed16" src="assets/images/Bed/16.jpg" alt="Bed Model 16" />
+  <h2>Bed Model 16</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹5000</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed16"></label><br>
+  <button onclick="addToCart('Bed Model 16', 5000, 'qty-bed16', 'img-bed16')">Add to Cart</button>
 </div>
 
-<!-- Product 19 --> 
+<!-- Product 17 -->
 <div class="product-card">
-  <img src="assets/images/Bed/19.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed17" src="assets/images/Bed/17.jpg" alt="Bed Model 17" />
+  <h2>Bed Model 17</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹5100</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed17"></label><br>
+  <button onclick="addToCart('Bed Model 17', 5100, 'qty-bed17', 'img-bed17')">Add to Cart</button>
 </div>
 
-<!-- Product 20 --> 
+<!-- Product 18 -->
 <div class="product-card">
-  <img src="assets/images/Bed/20.jpg" alt="Item">     
-  <h2></h2>
+  <img id="img-bed18" src="assets/images/Bed/18.jpg" alt="Bed Model 18" />
+  <h2>Bed Model 18</h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
-</div>
-<!-- Product 21 --> 
-<div class="product-card">
-  <img src="assets/images/Bed/21.jpg" alt="Item">     
-  <h2></h2>
-  <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Item', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹5200</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed18"></label><br>
+  <button onclick="addToCart('Bed Model 18', 5200, 'qty-bed18', 'img-bed18')">Add to Cart</button>
 </div>
 
+<!-- Product 19 -->
+<div class="product-card">
+  <img id="img-bed19" src="assets/images/Bed/19.jpg" alt="Bed Model 19" />
+  <h2>Bed Model 19</h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹5300</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed19"></label><br>
+  <button onclick="addToCart('Bed Model 19', 5300, 'qty-bed19', 'img-bed19')">Add to Cart</button>
+</div>
 
+<!-- Product 20 -->
+<div class="product-card">
+  <img id="img-bed20" src="assets/images/Bed/20.jpg" alt="Bed Model 20" />
+  <h2>Bed Model 20</h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹5400</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed20"></label><br>
+  <button onclick="addToCart('Bed Model 20', 5400, 'qty-bed20', 'img-bed20')">Add to Cart</button>
+</div>
+
+<!-- Product 21 -->
+<div class="product-card">
+  <img id="img-bed21" src="assets/images/Bed/21.jpg" alt="Bed Model 21" />
+  <h2>Bed Model 21</h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹5500</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-bed21"></label><br>
+  <button onclick="addToCart('Bed Model 21', 5500, 'qty-bed21', 'img-bed21')">Add to Cart</button>
+</div>
   </div>
 
-  <script>
-    function addToCart(name, price, qtyId) {
-      const quantity = parseInt(document.getElementById(qtyId).value) || 1;
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 <strong>Acharya Furniture</strong></p>
+      <p>📞 Contact: <a href="tel:8145002490">8145002490</a></p>
+      <p>📍 Address: Salugara 2 Mile Check Post</p>
+      <p>Made with <span style="color: red;">❤</span> by 
+        <a href="http://abishek.rf.gd/?i=1" target="_blank">Abishek Khanal</a>
+      </p>
+    </div>
+  </footer>
 
+  <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+    function addToCart(name, price, qtyId, imgId) {
+      const quantity = parseInt(document.getElementById(qtyId).value) || 1;
+      const image = document.getElementById(imgId).src;
+  
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
       const existingIndex = cart.findIndex(item => item.name === name);
       if (existingIndex >= 0) {
         cart[existingIndex].quantity += quantity;
       } else {
-        cart.push({ name, price, quantity });
+        cart.push({ name, price, quantity, image });
       }
-
+  
       localStorage.setItem('cart', JSON.stringify(cart));
       alert(`${name} added to cart!`);
     }
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>

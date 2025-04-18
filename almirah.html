@@ -5,7 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Furniture Products</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
   <style>
+    #preloader {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#preloader img {
+  width: 150px;
+  height: auto;
+}
+
+
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
     header {
       background: url('assets/images/navbar.png') no-repeat center center/cover;
@@ -13,15 +33,53 @@
       padding: 2em 1em;
       text-align: center;
     }
-    nav {
-      margin-top: 1em;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    header {
+  background: url('assets/images/navbar.png') no-repeat center center/cover;
+  color: #fff;
+  padding: 1.5em 1em; /* Reduced padding for a more compact header */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for a subtle effect */
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-size: 1.5em; /* Smaller font size */
+  margin-bottom: 0.5em;
+  text-transform: uppercase; /* Keeping the bold and professional look */
+}
+
+nav {
+  text-align: center;
+  border-top: 2px solid #fff; /* Adds a top horizontal line */
+  border-bottom: 2px solid #fff; /* Adds a bottom horizontal line */
+  padding: 1em 0; /* Adds padding between the lines and the links */
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px; /* Space between links */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12; /* Gold color on hover */
+  transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+nav a:active {
+  color: #e67e22; /* Darker shade on click */
+}
+
+nav a:first-child {
+  margin-left: 0; /* No margin on the left for the first link */
+}
+
+nav a:last-child {
+  margin-right: 0; /* No margin on the right for the last link */
+}
     .product-grid { display: flex; flex-wrap: wrap; gap: 2rem; padding: 2rem; justify-content: center; }
     .product-card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; width: 300px; }
     .product-card img { width: 100%; border-radius: 10px; }
@@ -44,235 +102,269 @@
       <a href="order.html">Contact</a>
     </nav>
   </header>
+  <a id="button"></a>
   <br><center><h2>Our Furniture Products</h2></center> 
-
   <div class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="assets/images/Armali/1.jpg" alt="Luxury Sofa">
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong> </p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-sofa"></label><br>
-      <button onclick="addToCart('Luxury Sofa', 00, 'qty-sofa')">Add to Cart</button>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="assets/images/Armali/2.jpg" alt="Luxury Sofa">     
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong></p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-      <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="assets/images/Armali/3.jpg" alt="Luxury Sofa">     
-      <h2></h2>
-      <p></p>
-      <p><strong>Price:</strong></p>
-      <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-      <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
-    </div>
-    <!-- Product 4 --> 
+  <!-- Product 1-->
 <div class="product-card">
-  <img src="assets/images/Armali/4.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah" src="assets/images/Armali/1.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3500</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah"></label><br>
+  <button onclick="addToCart('Almirah Model 1', 3500, 'qty-almirah', 'img-almirah')">Add to Cart</button>
 </div>
 
-<!-- Product 5 --> 
+<button id="backToTop">↑ Back to Top</button>
+
+<!-- Product 2 -->
 <div class="product-card">
-  <img src="assets/images/Armali/5.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah2" src="assets/images/Armali/2.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3550</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah2"></label><br>
+  <button onclick="addToCart('Almirah Model 2', 3550, 'qty-almirah2', 'img-almirah2')">Add to Cart</button>
 </div>
 
-<!-- Product 6 --> 
+<!-- Product 3 -->
 <div class="product-card">
-  <img src="assets/images/Armali/6.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah3" src="assets/images/Armali/3.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3600</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah3"></label><br>
+  <button onclick="addToCart('Almirah Model 3', 3600, 'qty-almirah3', 'img-almirah3')">Add to Cart</button>
 </div>
 
-<!-- Product 7 --> 
+<!-- Product 4 -->
 <div class="product-card">
-  <img src="assets/images/Armali/7.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah4" src="assets/images/Armali/4.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3650</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah4"></label><br>
+  <button onclick="addToCart('Almirah Model 4', 3650, 'qty-almirah4', 'img-almirah4')">Add to Cart</button>
 </div>
 
-<!-- Product 8 --> 
+<!-- Product 5 -->
 <div class="product-card">
-  <img src="assets/images/Armali/8.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah5" src="assets/images/Armali/5.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3700</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah5"></label><br>
+  <button onclick="addToCart('Almirah Model 5', 3700, 'qty-almirah5', 'img-almirah5')">Add to Cart</button>
 </div>
 
-<!-- Product 9 --> 
+<!-- Product 6 -->
 <div class="product-card">
-  <img src="assets/images/Armali/9.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah6" src="assets/images/Armali/6.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3750</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah6"></label><br>
+  <button onclick="addToCart('Almirah Model 6', 3750, 'qty-almirah6', 'img-almirah6')">Add to Cart</button>
 </div>
 
-<!-- Product 10 --> 
+<!-- Product 7 -->
 <div class="product-card">
-  <img src="assets/images/Armali/10.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah7" src="assets/images/Armali/7.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3800</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah7"></label><br>
+  <button onclick="addToCart('Almirah Model 7', 3800, 'qty-almirah7', 'img-almirah7')">Add to Cart</button>
 </div>
 
-<!-- Product 11 --> 
+<!-- Product 8 -->
 <div class="product-card">
-  <img src="assets/images/Armali/11.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah8" src="assets/images/Armali/8.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3850</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah8"></label><br>
+  <button onclick="addToCart('Almirah Model 8', 3850, 'qty-almirah8', 'img-almirah8')">Add to Cart</button>
 </div>
 
-<!-- Product 12 --> 
+<!-- Product 9 -->
 <div class="product-card">
-  <img src="assets/images/Armali/12.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah9" src="assets/images/Armali/9.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3900</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah9"></label><br>
+  <button onclick="addToCart('Almirah Model 9', 3900, 'qty-almirah9', 'img-almirah9')">Add to Cart</button>
 </div>
 
-<!-- Product 13 --> 
+<!-- Product 10 -->
 <div class="product-card">
-  <img src="assets/images/Armali/13.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah10" src="assets/images/Armali/10.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹3950</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah10"></label><br>
+  <button onclick="addToCart('Almirah Model 10', 3950, 'qty-almirah10', 'img-almirah10')">Add to Cart</button>
 </div>
 
-<!-- Product 14 --> 
+<!-- Product 11 -->
 <div class="product-card">
-  <img src="assets/images/Armali/14.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah11" src="assets/images/Armali/11.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4000</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah11"></label><br>
+  <button onclick="addToCart('Almirah Model 11', 4000, 'qty-almirah11', 'img-almirah11')">Add to Cart</button>
 </div>
 
-<!-- Product 15 --> 
+<!-- Product 12 -->
 <div class="product-card">
-  <img src="assets/images/Armali/15.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah12" src="assets/images/Armali/12.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4050</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah12"></label><br>
+  <button onclick="addToCart('Almirah Model 12', 4050, 'qty-almirah12', 'img-almirah12')">Add to Cart</button>
 </div>
 
-<!-- Product 16 --> 
+<!-- Product 13 -->
 <div class="product-card">
-  <img src="assets/images/Armali/16.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah13" src="assets/images/Armali/13.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4100</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah13"></label><br>
+  <button onclick="addToCart('Almirah Model 13', 4100, 'qty-almirah13', 'img-almirah13')">Add to Cart</button>
 </div>
 
-<!-- Product 17 --> 
+<!-- Product 14 -->
 <div class="product-card">
-  <img src="assets/images/Armali/17.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah14" src="assets/images/Armali/14.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4150</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah14"></label><br>
+  <button onclick="addToCart('Almirah Model 14', 4150, 'qty-almirah14', 'img-almirah14')">Add to Cart</button>
 </div>
 
-<!-- Product 18 --> 
+<!-- Product 15 -->
 <div class="product-card">
-  <img src="assets/images/Armali/18.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah15" src="assets/images/Armali/15.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4200</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah15"></label><br>
+  <button onclick="addToCart('Almirah Model 15', 4200, 'qty-almirah15', 'img-almirah15')">Add to Cart</button>
 </div>
 
-<!-- Product 19 --> 
+<!-- Product 16 -->
 <div class="product-card">
-  <img src="assets/images/Armali/19.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah16" src="assets/images/Armali/16.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4250</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah16"></label><br>
+  <button onclick="addToCart('Almirah Model 16', 4250, 'qty-almirah16', 'img-almirah16')">Add to Cart</button>
 </div>
 
-<!-- Product 20 --> 
+<!-- Product 17 -->
 <div class="product-card">
-  <img src="assets/images/Armali/20.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah17" src="assets/images/Armali/17.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4300</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah17"></label><br>
+  <button onclick="addToCart('Almirah Model 17', 4300, 'qty-almirah17', 'img-almirah17')">Add to Cart</button>
 </div>
-<!-- Product 21 --> 
+
+<!-- Product 18 -->
 <div class="product-card">
-  <img src="assets/images/Armali/21.jpg" alt="Luxury Sofa">     
+  <img id="img-almirah18" src="assets/images/Armali/18.jpg" alt="">
   <h2></h2>
   <p></p>
-  <p><strong>Price:</strong></p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-table"></label><br>
-  <button onclick="addToCart('Wooden Table', 00, 'qty-table')">Add to Cart</button>
+  <p><strong>Price:</strong> ₹4350</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah18"></label><br>
+  <button onclick="addToCart('Almirah Model 18', 4350, 'qty-almirah18', 'img-almirah18')">Add to Cart</button>
 </div>
 
+<!-- Product 19 -->
+<div class="product-card">
+  <img id="img-almirah19" src="assets/images/Armali/19.jpg" alt="">
+  <h2></h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹4400</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah19"></label><br>
+  <button onclick="addToCart('Almirah Model 19', 4400, 'qty-almirah19', 'img-almirah19')">Add to Cart</button>
+</div>
 
+<!-- Product 20 -->
+<div class="product-card">
+  <img id="img-almirah20" src="assets/images/Armali/20.jpg" alt="">
+  <h2></h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹4450</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah20"></label><br>
+  <button onclick="addToCart('Almirah Model 20', 4450, 'qty-almirah20', 'img-almirah20')">Add to Cart</button>
+</div>
+
+<!-- Product 21 -->
+<div class="product-card">
+  <img id="img-almirah21" src="assets/images/Armali/21.jpg" alt="">
+  <h2></h2>
+  <p></p>
+  <p><strong>Price:</strong> ₹4500</p>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-almirah21"></label><br>
+  <button onclick="addToCart('Almirah Model 21', 4500, 'qty-almirah21', 'img-almirah21')">Add to Cart</button>
+</div>
   </div>
 
-  <script>
-    function addToCart(name, price, qtyId) {
-      const quantity = parseInt(document.getElementById(qtyId).value) || 1;
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 <strong>Acharya Furniture</strong></p>
+      <p>📞 Contact: <a href="tel:8145002490">8145002490</a></p>
+      <p>📍 Address: Salugara 2 Mile Check Post</p>
+      <p>Made with <span style="color: red;">❤</span> by 
+        <a href="http://abishek.rf.gd/?i=1" target="_blank">Abishek Khanal</a>
+      </p>
+    </div>
+  </footer>
 
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+    
+
+    function addToCart(name, price, qtyId, imgId) {
+      const quantity = parseInt(document.getElementById(qtyId).value) || 1;
+      const image = document.getElementById(imgId).src;
+  
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
       const existingIndex = cart.findIndex(item => item.name === name);
       if (existingIndex >= 0) {
         cart[existingIndex].quantity += quantity;
       } else {
-        cart.push({ name, price, quantity });
+        cart.push({ name, price, quantity, image });
       }
-
+  
       localStorage.setItem('cart', JSON.stringify(cart));
       alert(`${name} added to cart!`);
     }
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>

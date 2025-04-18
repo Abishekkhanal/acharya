@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Furniture Products</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
     body {
@@ -78,26 +78,26 @@ nav a:last-child {
   </style>
 </head>
 <body>
-  <header>
-  <h1>Acharya Furniture</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="categories.html">Categories</a>
-      <a href="cart.html">Cart</a>
-      <a href="order.html">Contact</a>
-    </nav>
-  </header>
-  <br><center><h2>Our Furniture Products</h2></center> 
+    <header>
+      <h1>Acharya Furniture</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="categories.html">Categories</a>
+          <a href="cart.html">Cart</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+  <br><center><h2>Table with Chairs</h2></center> 
 
   <div class="product-grid">
    <!-- Product 1 -->
 <div class="product-card">
-  <img id="img-hotel1" src="assets/images/hotel/1.jpg" alt="Luxury Suite 1">
-  <h2>Luxury Suite 1</h2>
+  <img id="img-table_chair" src="assets/images/Table chair combo/1.jpg" alt="">
+  <h2></h2>
   <p></p>
   <p><strong>Price:</strong> ₹3500</p>
-  <label>Qty: <input type="number" value="1" min="1" id="qty-hotel1"></label><br>
-  <button onclick="addToCart('Luxury Suite 1', 3500, 'qty-hotel1', 'img-hotel1')">Add to Cart</button>
+  <label>Qty: <input type="number" value="1" min="1" id="qty-table_chair"></label><br>
+  <button onclick="addToCart('', 3500, 'qty-table_chair', 'img-table_chair')">Add to Cart</button>
 </div>
 
 <!-- Product 2 -->
@@ -179,18 +179,8 @@ nav a:last-child {
   <label>Qty: <input type="number" value="1" min="1" id="qty-hotel9"></label><br>
   <button onclick="addToCart('Mountain View Suite', 5300, 'qty-hotel9', 'img-hotel9')">Add to Cart</button>
 </div>
-  </div>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <p>&copy; 2025 <strong>Acharya Furniture</strong></p>
-      <p>📞 Contact: <a href="tel:8145002490">8145002490</a></p>
-      <p>📍 Address: Salugara 2 Mile Check Post</p>
-      <p>Made with <span style="color: red;">❤</span> by 
-        <a href="http://abishek.rf.gd/?i=1" target="_blank">Abishek Khanal</a>
-      </p>
-    </div>
-  </footer>
+  </div>
 
   <script>
     function addToCart(name, price, qtyId, imgId) {

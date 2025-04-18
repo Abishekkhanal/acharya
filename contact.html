@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,20 +14,52 @@
       color: #333;
     }
     header {
-      background: url('assets/images/navbar.png') no-repeat center center/cover;
-      color: #fff;
-      padding: 2em 1em;
-      text-align: center;
-    }
-    nav {
-      margin-top: 1em;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  background: url('assets/images/navbar.png') no-repeat center center/cover;
+  color: #fff;
+  padding: 1.5em 1em; /* Reduced padding for a more compact header */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for a subtle effect */
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-size: 1.5em; /* Smaller font size */
+  margin-bottom: 0.5em;
+  text-transform: uppercase; /* Keeping the bold and professional look */
+}
+
+nav {
+  text-align: center;
+  border-top: 2px solid #fff; /* Adds a top horizontal line */
+  border-bottom: 2px solid #fff; /* Adds a bottom horizontal line */
+  padding: 1em 0; /* Adds padding between the lines and the links */
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px; /* Space between links */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #f39c12; /* Gold color on hover */
+  transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+nav a:active {
+  color: #e67e22; /* Darker shade on click */
+}
+
+nav a:first-child {
+  margin-left: 0; /* No margin on the left for the first link */
+}
+
+nav a:last-child {
+  margin-right: 0; /* No margin on the right for the last link */
+}
     .contact-container {
       max-width: 1000px;
       margin: 2rem auto;
@@ -100,7 +132,7 @@
 
     <div class="map">
       <h2>Find Us Here</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1294761930597!2d85.31572651506122!3d27.7089554328498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198e235f6e5b%3A0xf697d202b3e21de3!2sKathmandu!5e0!3m2!1sen!2snp!4v1615103963534!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14249.410317994563!2d88.43661538412854!3d26.76502883663361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e44067630b9315%3A0x9d977de0962128db!2sSalugara%2C%20Siliguri%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1744942111319!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <div class="feedback-form">
@@ -118,5 +150,15 @@
       </form>
     </div>
   </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 <strong>Acharya Furniture</strong></p>
+      <p>📞 Contact: <a href="tel:8145002490">8145002490</a></p>
+      <p>📍 Address: Salugara 2 Mile Check Post</p>
+      <p>Made with <span style="color: red;">❤</span> by 
+        <a href="http://abishek.rf.gd/?i=1" target="_blank">Abishek Khanal</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
